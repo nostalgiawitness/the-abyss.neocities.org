@@ -16,16 +16,40 @@ function random(n) {
 }
 
 function spawnBalloon() {
-  const img = document.createElement("img");
-  img.className = "balloon";
-  img.src = `/assets/balloon1.gif`;
+  const balloon = document.createElement("div");
+  const lifeTimeout = setTimeout(() => balloon.remove(), 13000);
+  balloon.className = "balloon";
+  balloon.style.backgroundImage = `url(/assets/balloon1.gif)`;
   const startX = random(window.innerWidth - 100);
   const hue = random(360);
-  img.style.left = `${startX}px`;
-  img.style.top = `${window.innerHeight + 50}px`;
-  img.style.filter = `hue-rotate(${hue}deg)`;
-  specialContainer.append(img);
-  setTimeout(() => img.remove(), 13000);
+  balloon.style.left = `${startX}px`;
+  balloon.style.top = `${window.innerHeight + 50}px`;
+  balloon.style.filter = `hue-rotate(${hue}deg)`;
+  specialContainer.append(balloon);
+  
+  balloon.addEventListener("click", function onPop(e) {
+    e.preventDefault();
+    if (balloon.dataset.popped) return;
+    balloon.dataset.popped = "1";
+    //minifix
+    clearTimeout(lifeTimeout);
+    
+    const rect = balloon.getBoundingClientRect();
+    balloon.style.left = `${rect.left}px`;
+    balloon.style.top = `${rect.top}px`;
+    balloon.style.animation = "none";
+
+    //dont mind me hotlinking like a douche :3
+    const popSound = new Audio('https://opengameart.org/sites/default/files/audio_preview/pop_0.ogg.mp3');
+    popSound.volume = 0.3;
+    popSound.play().catch(err => console.log(err));
+
+    //holyfix for timestamp
+    balloon.style.backgroundImage = `url(/assets/balloon1pop.gif?t=${Date.now()})`;
+    balloon.style.pointerEvents = "none";
+    balloon.classList.add("popped");
+    setTimeout(() => balloon.remove(), 600);
+  });
 }
 
 function startParty() {

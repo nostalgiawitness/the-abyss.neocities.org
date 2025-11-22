@@ -13,37 +13,14 @@
 .balloon {
   position: absolute;
   width: 42px;
-  height: auto;
-  pointer-events: none;
+  height: 98px; /* Set a specific height */
+  pointer-events: auto;
   animation: float 12s linear forwards;
   opacity: 0.95;
   image-rendering: pixelated;
-}
-
-.balloon:before {
-  content: "";
-  height: 75px;
-  width: 1px;
-  padding: 1px;
-  background-color: #FDFD96;
-  display: block;
-  position: absolute;
-  top: 125px;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-
-.balloon:after {
-    content: "▲";
-    text-align: center;
-    display: block;
-    position: absolute;
-    color: inherit;
-    top: 120px;
-    left: 0;
-    right: 0;
-    margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @keyframes float {
