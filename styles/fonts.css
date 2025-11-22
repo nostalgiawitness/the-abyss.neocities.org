@@ -1,0 +1,24 @@
+/* === FONTS === */
+@font-face {
+    font-family: 'kingjola';
+    src: url('/fonts/kingjola-webfont.woff2') format('woff2'),
+         url('/fonts/kingjola-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'metamorphose_requiem';
+    src: url('/fonts/metamorphose_requiem-webfont.woff2') format('woff2'),
+         url('/fonts/metamorphose_requiem-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'winkle';
+    src: url('/fonts/winkle-regular-webfont.woff2') format('woff2'),
+         url('/fonts/winkle-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

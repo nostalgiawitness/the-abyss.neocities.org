@@ -1,0 +1,56 @@
+/* slightly edited variant of https://codepen.io/Jemimaabu/pen/vYEYdOy */
+
+#balloon-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* important */
+  z-index: 9999;
+}
+
+.balloon {
+  position: absolute;
+  width: 42px;
+  height: auto;
+  pointer-events: none;
+  animation: float 12s linear forwards;
+  opacity: 0.95;
+  image-rendering: pixelated;
+}
+
+.balloon:before {
+  content: "";
+  height: 75px;
+  width: 1px;
+  padding: 1px;
+  background-color: #FDFD96;
+  display: block;
+  position: absolute;
+  top: 125px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.balloon:after {
+    content: "▲";
+    text-align: center;
+    display: block;
+    position: absolute;
+    color: inherit;
+    top: 120px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(150px, -140vh);
+  }
+}

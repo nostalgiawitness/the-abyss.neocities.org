@@ -1,0 +1,59 @@
+@import "style.css";
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 25px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--library);
+  border: 10px groove var(--grey);
+  border-image: var(--library) 12 round;
+  box-sizing:border-box;
+}
+
+.grid-container>*{
+  border-bottom: 10px groove var(--secondary-color);
+  border-image: var(--library) 12 round;
+  box-shadow: 0 10px 5px -5px black;
+}
+
+.grid-container>*:nth-child(3n+1){ /*left of row*/
+  clip-path: polygon(-50% -50%, -50% 150%, 100% 150%, 100% -50%);
+}
+
+.grid-container>*:nth-child(3n){ /*right of row*/
+  clip-path: polygon(0% -50%, 0% 150%, 150% 150%, 150% -50%);
+}
+
+.grid-container>*:not(:nth-child(3n+1)):not(:nth-child(3n)){ /*middle of row*/
+  clip-path: polygon(0% -50%, 0% 150%, 100% 150%, 100% -50%);
+}
+
+.grid-item {
+  text-align: center;
+  color: whitesmoke;
+  transition: 0.3s;
+  font-weight: bold;
+  font-style: italic;
+}
+
+figcaption {
+  word-wrap: break-word;
+  text-align: center;
+  margin: 5px 0 0;
+}
+
+img {
+  width: 128px;
+  height: 128px;
+  box-shadow: 2px 2px 5px black;
+}
+
+/* === RESCALE === */
+
+@media only screen and (max-width: 640px) {
+  .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  padding: 25px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--library);
+}
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_blank">
+    <base loading="lazy">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/library.css">
+    <link rel="stylesheet" href="/styles/contentframe.css">
+    <script src="/scripts/iframe.js"></script>
+    <title>Tunes Library</title>
+    <style>
+      .content {
+        background: var(--library); 
+        padding-top: 0; 
+        padding-bottom: 5px;
+      }
+      
+      .content p {
+        color: var(--dgrey);
+        font-weight: bold;
+        font-size: 30px;
+        margin: 0;
+        mix-blend-mode: overlay;
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+      <div class="content">
+        <p>click on an album to play a track on the player!</p>
+      </div>
+      <div class="grid-container" id="tunes-grid"></div>
+    </div>
+    <script src="/scripts/tunes.js"></script>
+</body>
+</html>

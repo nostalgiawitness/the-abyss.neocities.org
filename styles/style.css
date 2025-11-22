@@ -1,0 +1,297 @@
+@import "fonts.css";
+/* === ROOT === */
+:root {
+  --dgrey: #313131;
+  --grey: #595959;
+  --lgrey: #b2b2b2;
+  --slate: #141414;
+  --rice: #faf5ef;
+  --sun:  #fabe28;
+  --peach: #f06543;
+  
+  --altdgrey: #25282a;
+  --altgrey: #43494b;
+  --altslate: #181a1b;
+
+  --primary-color: var(--altdgrey);
+  --secondary-color: var(--altgrey);
+  --tertiary-color: var(--lgrey);
+  --quaternary-color: var(--altslate);
+
+  --background: black;
+  --text-color: var(--rice);
+  --link-color: var(--tertiary-color);
+  --link-color-hover: var(--text-color);
+
+  --border: 0px solid black;
+  --library: url(/assets/bg/wood.jpg);
+  --aquarium: url(/assets/bg/aquarium.jpg);
+}
+
+
+/* === BASE === */
+body {
+  background: var(--background);
+  color: var(--text-color);
+  background-attachment: fixed;
+  background-size: cover;
+  letter-spacing: 0.7px;
+  transition: top ease 0.5s;
+  font-family: 'times new roman';
+  overflow: hidden;
+}
+
+main {
+  background-color: transparent;
+  width: 100%;
+}
+
+li {
+  margin-left: 5px;
+}
+
+ul {
+  display: block;
+  list-style-type: lower-greek;
+  line-height: 40px;
+  margin: 0;
+  white-space: normal;
+}
+
+ul ul {
+    list-style-type: disclosure-closed;
+}
+
+.hover {
+  transition: 0.3s;
+}
+
+.hover:hover {
+  transform: translate(0, -10px);
+}
+
+/* === HEADING === */
+h1 {
+  font-family: 'kingjola';
+  font-size: 128px;
+  text-shadow: 0 0 20px;
+  position: relative;
+  margin: 0;
+  top: 0;
+  z-index: 5;
+}
+
+/* === LINKS === */
+a:link, a:visited {
+  color: var(--link-color)
+}
+
+a:hover {
+  color: var(--link-color-hover);
+  text-shadow: 0 0 20px;
+}
+
+
+a {
+  transition: 0.3s;
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  opacity: 1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+/* === LAYOUT === */
+#container {
+  max-width: 850px;
+  margin: 0 auto;
+  border-top: none;
+}
+
+#flex {
+  display: flex;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(11.25rem, 100%), 1fr));
+  gap: 1rem;
+}
+
+/* === NAVIGATION === */
+.titlecard {
+  text-align: left;
+}
+
+nav {
+  position: sticky;
+}
+
+iframe.nav {
+  width: 140px;
+  background: var(--quaternary-color);
+}
+
+.nav-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 2000;
+  background: var(--quaternary-color);
+  color: var(--rice);
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: none;
+}
+
+/* === CONTENT === */
+.title, .navtitle {
+  font-weight: bold;
+  padding-bottom: 100px;
+  padding-top: 10px;
+}
+
+.wrapper {
+  background-color: var(--primary-color);
+}
+
+.contentframe {
+  width: 100%;
+}
+
+iframe.contentframe {
+  width: 100%;
+  height: 60vh;
+  max-width: 100%;
+  border: none;
+  overflow-x: hidden;
+}
+
+.latestposts {
+  width: 100%;
+  height: 256px;
+  max-width: 100%;
+  border: none;
+  overflow: hidden;
+}
+
+.buttons {
+  image-rendering: pixelated;
+}
+
+/* === FOOTER === */
+footer {
+  border: var(--border);
+  height: 25px;
+  background-image: url(/assets/checkerdivider.gif);
+  background-repeat: round;
+}
+
+/* === SPAN === */
+span.small {
+  font-size: smaller;
+}
+
+span.x-small {
+  font-size: x-small;
+}
+
+.flip {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+/* === CUSTOM BULLETS */
+
+.social-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.social-links li {
+  position: relative;
+  padding-left: 30px;
+  margin: 10px 0;
+}
+
+.social-links li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; 
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* LOGOS */
+.social-links li.instagram::before {
+  background-image: url("/assets/icons/instagram.png");
+}
+
+.social-links li.telegram::before {
+  background-image: url("/assets/icons/telegram.png");
+  top: 25%;
+}
+
+.social-links li.steam::before {
+  background-image: url("/assets/icons/steam.png");
+}
+
+.social-links li.discord::before {
+  background-image: url("/assets/icons/discord.png");
+}
+
+.social-links li.github::before {
+  background-image: url("/assets/icons/github.png");
+}
+
+/* === RESCALE === */
+
+@media only screen and (max-width: 640px) {
+  #flex {
+    flex-wrap: wrap;
+  }
+
+  main {
+    width: 100%;
+    order: 2;
+  }
+
+  iframe.nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--quaternary-color);
+    transition: right 0.3s ease-in-out;
+    z-index: 500;
+  }
+
+  iframe.nav.open {
+    right: 0;
+  }
+  
+  .nav-toggle {
+    display: block;
+  }
+}

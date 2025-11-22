@@ -1,0 +1,40 @@
+@import "style.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0)), var(--aquarium);
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.aquarium {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fish {
+  position: absolute;
+}
+
+.fish img {
+  display: block;
+  transition: transform 0.2s;
+}
+
+.seaweed {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+@media only screen and (max-width: 640px) {
+  .fish img {
+    width: 40px;
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Одинокое Солнце горит.</title>
+  <link rel="icon" href="/assets/icons/purpleflame.ico">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/special.css">
+</head>
+<body>
+<div id="special-container"></div>
+  <div id="container">
+    <div id="flex">
+      <main>
+        <div class="title" width="500px">
+          <span id="text">
+            <h1>The abyss</h1>
+          </span>
+        </div>
+        <div class="wrapper">
+          <iframe class="contentframe" name="content" src="/iframe/content/about" frameborder="0">
+          </iframe>
+        </div>
+        <footer id="footer" class="footer-style"></footer>
+      </main>
+      <iframe class="nav" id="asidecont" src="/iframe/asidecont.html" frameborder="0"></iframe>
+    </div>
+  </div>
+  <button id="navToggle" class="nav-toggle">☰</button>
+  <script src="/scripts/oneko.js"></script>
+  <script>
+    const navToggle = document.getElementById("navToggle");
+    const navFrame = document.querySelector("iframe.nav");
+  
+    navToggle.addEventListener("click", () => {
+      navFrame.classList.toggle("open");
+    });
+    
+    //player
+    const playerIframe = document.getElementById('asidecont');
+    window.addEventListener('message', (event) => {
+    if (playerIframe && playerIframe.contentWindow) {
+      playerIframe.contentWindow.postMessage(event.data, '*');
+    }
+  });
+  </script>
+<script src="/scripts/special/balloons.js"></script>
+</body>
+</html>

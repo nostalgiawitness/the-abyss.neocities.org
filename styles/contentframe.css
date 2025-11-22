@@ -1,0 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background: bottom;
+}
+
+.content {
+  background-color: var(--primary-color);
+  font-size: 20px;
+  padding: 25px;
+  white-space: pre-line;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-top: 0;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<base loading="lazy">
+	<base target="_blank">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/contentframe.css">
+	<link rel="stylesheet" href="/styles/blog.css">
+    <script src="/scripts/iframe.js"></script>
+    <title>Latest Blog Posts</title>
+</head>
+<body>
+    <div class="wrapper">
+      <div class="content" style="background-color:var(--secondary-color)">
+		<h2>Latest Blog Posts</h2>
+      </div>
+      <div class="content" style="white-space: inherit; padding-left: 0px; padding-right: 0px;">
+        
+
+
+
+	<article>
+		<div class="blog">
+		  <div class="content" style="background-color:var(--slate)">
+			<h3 style="margin-bottom: 0px;">Don't forget to remove tracking ids in your links!</h3>
+			<span class="small">28 August 2025</span>
+		  </div>
+		  <div class="content">
+			<p><img src="/assets/blog/floorp_Cde7xEVjmX.png" alt="Screenshot" /></p>
+
+<p>In 2023, Youtube implemented tracking ids in their url whenever the video is shared. It’s a unique ‘sharing id’ that lets Youtube track whoever created the link and to who it had been shared to. 
+However, if you’ve ever noticed, this is done without the user’s consent. it’s very sneakily but also avoidable if you want to have just that little bit more of privacy from the hungry data consoomers that are over at the Google HQ.</p>
+
+<p><em>As demonstrated:</em>
+Here we’ve got a dirty link, you see that <em>“?si=AghVOcGOyPzDv0Gn”</em> part? Exactly, that is the share id that gives Youtube unnecessary info about you and your friends whenever you share this link.</p>
+<div class="language-plaintext highlighter-rouge"><div class="code">https://youtu.be/GosXLd-FsU0?si=AghVOcGOyPzDv0Gn
+</div></div>
+<p>Let’s sanitize it!</p>
+<div class="language-plaintext highlighter-rouge"><div class="code">https://youtu.be/GosXLd-FsU0
+</div></div>
+<p>It’s just that easy.</p>
+
+<p><em>But this was only the share id. There exist more than one types of components of links that track certain information. Such as:</em></p>
+<div class="language-plaintext highlighter-rouge"><div class="code">https://example.com?utm_source=newsletter1&utm_medium=email&utm_campaign=sale
+</div></div>
+
+<p>Yikes! All of those “?utm_source=newsletter”, “?utm_x=y”, etc. are trashing your link with tracking components! 
+Their names are pretty self explanatory to what they track:</p>
+
+<p>?utm_source=newsletter -&gt; This link was opened through a newsletter
+?utm_medium=email -&gt; This link was opened through an email medium
+?utm_campaign=sale -&gt; This link was opened through a campaign (presumably coming to the aforementioned email)</p>
+
+<p>Anyhow, I always recommend ‘sanitizing’ even that part of your links, they look are unpleasant to look at in general when shared and give your privacy a light slap on the wrist.</p>
+
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/clearurls/">I recommend using browser extensions for this, they do the ‘sanitizing’ work for you</a>
+<sup><sub> ironically the link above was ‘https://addons.mozilla.org/en-US/firefox/addon/clearurls/?utm_source=addons.mozilla.org&amp;utm_medium=referral&amp;utm_content=featured’. Don’t worry though, I already sanitized it for you :)</sub></sup></p>
+
+		  </div>
+		</div>
+	</article>
+
+	<article>
+		<div class="blog">
+		  <div class="content" style="background-color:var(--slate)">
+			<h3 style="margin-bottom: 0px;">Hello World!</h3>
+			<span class="small">27 July 2025</span>
+		  </div>
+		  <div class="content">
+			<p>No fucking I finally set this shitty Jekyll blogposting up… I’m at a loss for words.
+Exteremely WIP right now, I’ll be trying to make this a part of the website now. &lt;3</p>
+
+		  </div>
+		</div>
+	</article>
+
+<script src="/scripts/blog.js"></script>
+
+<div style="text-align:center; margin-top: 2em; background-color: var(--slate);">
+  <a href="/iframe/content/archive.html" class="button" target="content">View All Posts</a>
+</div>
+
+      </div>
+    </div>
+	<script src="/scripts/blog.js"></script>
+</body>
+</html>

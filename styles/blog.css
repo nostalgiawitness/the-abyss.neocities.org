@@ -1,0 +1,16 @@
+.blog .code {
+  width: 97%;
+  border: 1px solid #3f3f3f;
+  background-color: #111111;
+  font-family: "Courier New";
+  white-space: pre-line;
+  text-align: left;
+  padding-left: 3%;
+}
+
+.playable-song figcaption {
+  width: 128px;
+  font-size: small;
+  text-align: center;
+  white-space: pre-wrap;
+}

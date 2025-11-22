@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base target="content">
+    <base loading="lazy">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0;">
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="/scripts/iframe.js"></script>
+    <script src="/scripts/player.js" defer></script>
+    <style>
+      body {
+        background-color: var(--tBar);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      aside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+      ul {
+        padding: 20px;
+        margin: 0;
+      }
+      .buttons {
+        display: block;
+        margin: auto;
+        width: 75%;
+      }
+
+      /* --- player styles --- */
+      .player { 
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 8px; 
+        background: var(--dgrey); 
+        border: 1px solid var(--grey); 
+        border-radius: 10px; 
+        font-size: 0.85em; 
+        color: var(--rice); 
+      }
+      .player .songtitle {
+        font-weight: bold;
+        font-size: 0.9em;
+        margin-bottom: 5px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .player-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 5px;
+      }
+      .player-controls button {
+        background: none;
+        border: none;
+        color: var(--fg, #eee);
+        font-size: 1.2em;
+        cursor: pointer;
+      }
+      .player-controls button:hover {
+        color: var(--sun);
+      }
+      .seekbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.75em;
+      }
+      .seek_slider {
+        flex: 1;
+        margin: 0 5px;
+        width: 100%;
+      }
+    </style>
+</head>
+<body>
+    <aside>
+        <nav id="nav">
+            <ul>
+                <li><a href="./content/about">Home</a>
+                <!--<li><a href="./content/template">Reading</a>-->
+                <li><a href="./content/tunes">Tunes</a>
+                <li><a href="./content/webmastery">Webmastery</a>
+                <li><a href="./content/websites">Websites</a>
+                <li><a href="./content/aquarium">Aquarium</a>
+                <li><a href="./content/blog">Blog</a>
+                <li><a href="./content/credits">Credits</a>
+            </ul>
+            
+            <div class="buttons">
+              <a href="https://the-abyss.neocities.org/" target="_blank"><img src="/assets/buttons/the-abyss.gif"></a>
+              <a href="https://decolonizepalestine.com/" target="_blank"><img src="/assets/buttons/standwith.png"></a>
+              <iframe src="//incr.easrng.net/badge?key=the-abyss" style="background: url(//incr.easrng.net/bg.gif)" title="increment badge" width="88" height="31" frameborder="0"></iframe>
+              <a href="https://neocities.org" target="_blank"><img src="/assets/buttons/passionbutton.gif"></a>
+              <a href="https://archive.org" target="_blank"><img src="/assets/buttons/internetarchive.gif"></a>
+              <a href="https://adryd.com" target="_blank"><img src="/assets/buttons/adryd.png"></a>
+              <a href="https://star-edition.github.io" target="_blank"><img src="/assets/buttons/star-edition.png"></a>
+            </div>
+        </nav>
+    </aside>
+
+    <div class="player">
+      <audio id="music"></audio>
+      <marquee class="songtitle" direction="right" scrollamount="3">Loading...</marquee>
+      <div class="player-controls">
+        <button class="prev-track">⏮</button>
+        <button class="playpause-track">▶</button>
+        <button class="next-track">⏭</button>
+      </div>
+      <div class="seekbar">
+        <span class="current-time">0:00</span>
+        <input type="range" min="0" max="100" value="0" class="seek_slider">
+        <span class="total-duration">0:00</span>
+      </div>
+    </div>
+</body>
+</html>
