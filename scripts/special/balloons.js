@@ -9,10 +9,28 @@ const currentDay = date.getDate();
 
 if (currentMonth === 10 && currentDay === 25) {
   window.addEventListener("load", startParty);
+} 
+else if (currentMonth == 11 || (currentMonth === 0 && currentDay <= 6)) 
+{
+  const script = document.createElement("script");
+  script.src = "/scripts/special/snow.js";
+  document.head.appendChild(script);
+  
+  window.addEventListener("load", startXmas);
 }
 
 function random(n) {
   return Math.floor(Math.random() * n);
+}
+
+function startXmas() {
+  const fairyLights = document.createElement("div");
+  fairyLights.className = "fairy-lights pixelated";
+  const xmasTree = document.createElement("div");
+  xmasTree.className = "xmas-tree pixelated";
+
+  specialContainer.appendChild(fairyLights);
+  specialContainer.appendChild(xmasTree);
 }
 
 function spawnBalloon() {
@@ -41,7 +59,6 @@ function spawnBalloon() {
 
     //dont mind me hotlinking like a douche :3
     const popSound = new Audio('https://opengameart.org/sites/default/files/audio_preview/pop_0.ogg.mp3');
-    popSound.volume = 0.3;
     popSound.play().catch(err => console.log(err));
 
     //holyfix for timestamp
@@ -59,6 +76,8 @@ function startParty() {
     spawnBalloon();
   }, random(150) + interval);
 }
+
+
 
 function detectMob() {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 

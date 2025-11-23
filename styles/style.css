@@ -39,6 +39,7 @@ body {
   transition: top ease 0.5s;
   font-family: 'times new roman';
   overflow: hidden;
+  margin: 0;
 }
 
 main {
@@ -190,7 +191,7 @@ iframe.contentframe {
   overflow: hidden;
 }
 
-.buttons {
+.pixelated {
   image-rendering: pixelated;
 }
 
