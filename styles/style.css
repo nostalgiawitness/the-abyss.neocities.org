@@ -294,5 +294,6 @@ span.x-small {
   
   .nav-toggle {
     display: block;
+    z-index: 9999;
   }
 }
